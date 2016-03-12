@@ -9,8 +9,10 @@ newgame();
 
 function newgame(){
   prepareField();
-  //placeDisc(Math.floor(Math.random()*2)+1);
-  placeDisc(1);
+  var currPlayer = Math.floor(Math.random()*2+1);
+  alert("curr player: " + currPlayer);
+  placeDisc(currPlayer);
+  
 }
 
 function checkForVictory(row,col){
@@ -109,6 +111,7 @@ function Disc(player){
   
   this.addToScene = function(){
     board.innerHTML += '<div id="d'+this.id+'" class="disc '+this.color+'"></div>';
+	alert("Disc:addToScene currentPlayer: " + currentPlayer);
     if(currentPlayer==2){
       //computer move
       var possibleMoves = think();
@@ -121,9 +124,9 @@ function Disc(player){
   
   var $this = this;
   document.onmousemove = function(evt){
+     alert("evt.clientX " + evt.clientX);
     if(currentPlayer == 1){
     currentCol = Math.floor((evt.clientX - board.offsetLeft)/60);
-	alert("current col2: " + currentCol);
 	if(currentCol<0){currentCol=0;}
     if(currentCol>6){currentCol=6;}
     document.getElementById('d'+$this.id).style.left = (14+60*currentCol)+"px";
