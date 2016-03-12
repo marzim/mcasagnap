@@ -140,14 +140,12 @@ function Disc(player){
   }
   
   document.onclick = function(evt){
-    // if(currentPlayer == 1){
-      // if(possibleColumns().indexOf(currentCol) != -1){
-        // dropDisc($this.id,$this.player);
-      // }
-    // }
-	if(possibleColumns().indexOf(currentCol) != -1){
+    if(currentPlayer == 1){
+      if(possibleColumns().indexOf(currentCol) != -1){
         dropDisc($this.id,$this.player);
       }
+    }
+	alert("current player: " + currentPlayer);
   }
 }
 
