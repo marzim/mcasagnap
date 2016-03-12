@@ -149,7 +149,7 @@ function Disc(player){
 
 function dropDisc(cid,player){
   currentRow = firstFreeRow(currentCol,player);
-  //moveit(cid,(14+currentRow*60));
+  moveit(cid,(14+currentRow*60));
   currentPlayer = player;
   checkForMoveVictory();
 }
