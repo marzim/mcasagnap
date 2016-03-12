@@ -9,7 +9,8 @@ newgame();
 
 function newgame(){
   prepareField();
-  placeDisc(Math.floor(Math.random()*2)+1);
+  //placeDisc(Math.floor(Math.random()*2)+1);
+  placeDisc(1);
 }
 
 function checkForVictory(row,col){
@@ -144,7 +145,7 @@ function Disc(player){
         dropDisc($this.id,$this.player);
       }
     }
-	alert("bullshit!");
+	
   }
 }
 
@@ -176,11 +177,9 @@ function placeDisc(player){
 function prepareField(){
   gameField = new Array();
   for(var i=0; i<6; i++){
-	$('#game-table').append('<tr></tr>');
-    gameField[i] = new Array();
+	gameField[i] = new Array();
     for(var j=0; j<7; j++){
-	$('#game-table').append('<td></td>');
-      gameField[i].push(0);
+	  gameField[i].push(0);
     }
   }
 }

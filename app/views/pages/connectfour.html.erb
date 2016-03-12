@@ -3,11 +3,18 @@
 <title>Connect Four</title>
 </head>
 <body>
-<h1>Welcome to Connect Four</h1>
-  <div id="game-base">
-  <div id="game-table">
-    
+<div class="main">
+  <h1>Welcome to Connect Four</h1>
+  <div class="container-fluid">
+	<table class="table table-striped table-bordered table-condensed">
+	<% for i in 0..5 %>
+	<tr id=<%"tr"+i%>></tr>
+		<% for x in 0..6 %>
+			<td id=<%"td"+x%> class="col-md-1"><br /><br /></td>
+		<% end %>
+	<% end %>
+	</table>
   </div>
-  </div>
+</div>
 </body>
 </html>
