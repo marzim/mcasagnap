@@ -176,8 +176,10 @@ function placeDisc(player){
 function prepareField(){
   gameField = new Array();
   for(var i=0; i<6; i++){
+	$('#game-table').append('<tr></tr>');
     gameField[i] = new Array();
     for(var j=0; j<7; j++){
+	$('#game-table').append('<td></td>');
       gameField[i].push(0);
     }
   }
