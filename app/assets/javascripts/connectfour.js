@@ -124,10 +124,10 @@ function Disc(player){
   
   var $this = this;
   document.onmousemove = function(evt){
-     
+    alert("document.onmousemove currentPlayer: " + currentPlayer); 
     if(currentPlayer == 1){
     currentCol = Math.floor((evt.clientX - board.offsetLeft)/60);
-	alert("document.onmousemove currentCol: " + currentCol);
+	
 	if(currentCol<0){currentCol=0;}
     if(currentCol>6){currentCol=6;}
     document.getElementById('d'+$this.id).style.left = (14+60*currentCol)+"px";
@@ -137,6 +137,7 @@ function Disc(player){
   document.onload = function(evt){
     if(currentPlayer == 1){
     currentCol = Math.floor((evt.clientX - board.offsetLeft)/60);
+	alert("document.onload currentcol: " + currentCol);
     if(currentCol<0){currentCol=0;}
     if(currentCol>6){currentCol=6;}
     document.getElementById('d'+$this.id).style.left = (14+60*currentCol)+"px";
