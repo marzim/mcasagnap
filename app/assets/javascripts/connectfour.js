@@ -124,9 +124,10 @@ function Disc(player){
   
   var $this = this;
   document.onmousemove = function(evt){
-     alert("evt.clientX " + evt.clientX);
+     
     if(currentPlayer == 1){
     currentCol = Math.floor((evt.clientX - board.offsetLeft)/60);
+	alert("document.onmousemove currentCol: " + currentCol);
 	if(currentCol<0){currentCol=0;}
     if(currentCol>6){currentCol=6;}
     document.getElementById('d'+$this.id).style.left = (14+60*currentCol)+"px";
