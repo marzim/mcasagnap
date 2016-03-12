@@ -144,6 +144,7 @@ function Disc(player){
         dropDisc($this.id,$this.player);
       }
     }
+	alert("bullshit!");
   }
 }
 
