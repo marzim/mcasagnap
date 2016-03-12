@@ -151,8 +151,10 @@ function Disc(player){
 
 function dropDisc(cid,player){
   currentRow = firstFreeRow(currentCol,player);
+  alert("current row: " + currentRow);
   moveit(cid,(14+currentRow*60));
   currentPlayer = player;
+  alert("current player: " + currentPlayer);
   checkForMoveVictory();
 }
 
