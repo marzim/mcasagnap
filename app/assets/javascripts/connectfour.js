@@ -8,6 +8,7 @@ var id = 1;
 newgame();
 
 function newgame(){
+alert("board " + board);
   prepareField();
   var currPlayer = Math.floor(Math.random()*2+1);
   alert("curr player: " + currPlayer);
