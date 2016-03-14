@@ -24,32 +24,46 @@
                 cellAt(previousCell + 1, column)["className"] = players[current];				
 	            previousCell === row - 1 ? 
 				function (row, column) {
-                    return function (row, column) {
+                    return function horizontalWin(row, column) {
                         for (a = column - 1; 0 < a && isCurrentColor(row, a); a--) {
                         }
                         for (b = column + 1; 8 > b && isCurrentColor(row, b); b++) {
                         }
 						var val = 4 < b - a;
+						if(val)
+							alert("Horizontal Win: " + val + " row: " + row + " column: " + column);
 						return val;
                     }
-					(row, column) || function (row, column) {
+					(row, column) || function verticalWin(row, column) {
                         for (c = row + 1; 7 > c && isCurrentColor(c, column); c++) {
                         }
-                        return 3 < c - row;
+						var val = 3 < c - row;
+						
+						if(val)
+							alert("Vertical Win: " + val + " row: " + row + " column: " + column);
+                        return val;
                     }
-					(row, column) || function (row, column) {
+					(row, column) || function diagonalNWwin(row, column) {
                         for (a = row - 1, b = column - 1; 0 < a && !(1 > b) && isCurrentColor(a, b); a--)
                             b--;
                         for (c = row + 1, b = column + 1; 7 > c && !(7 < b) && isCurrentColor(c, b); c++)
                             b++;
-                        return 4 < c - a
+						var val = 4 < c - a;
+						
+						if(val)
+							alert("Diagonal Win(North-West): " + val + " row: " + row + " column: " + column);
+                        return val;
                     }
-					(row, column) || function (row, column) {
+					(row, column) || function diagonalNEwin(row, column) {
                         for (a = row - 1, b = column + 1; 0 < a && !(7 < b) && isCurrentColor(a, b); a--)
                             b++;
                         for (c = row + 1, b = column - 1; 7 > c && !(1 > b) && isCurrentColor(c, b); c++)
                             b--;
-                        return 4 < c - a;
+						var val = 4 < c - a;
+						
+						if(val)
+							alert("Diagonal Win(North-East): " + val + " row: " + row + " column: " + column);
+                        return val;
                     }(row, column);
                 }
 				
@@ -61,7 +75,7 @@
 
             };
 
-    return function () {		
+    return function startNewGame() {		
         cid = "color";
         newgameLabel = "newgame";
         wonLabel = "won";
