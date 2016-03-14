@@ -20,11 +20,9 @@
             },
             
 			makeMove = function (row, column, previousCell) {
-			
 				previousCell > 0 && (cellAt(previousCell, column)["className"] = '');
                 cellAt(previousCell + 1, column)["className"] = players[current];				
-				alert("makeMove row: " + row + " column " + column + " previousCell " + previousCell);
-                previousCell === row - 1 ? 
+	            previousCell === row - 1 ? 
 				function (row, column) {
                     return function (row, column) {
                         for (a = column - 1; 0 < a && isCurrentColor(row, a); a--) {
